@@ -298,6 +298,7 @@ footer {
     .movie-description {
         width: 100%;
         gap: 1rem;
+        text-wrap: balance;
     }
 
     .movie-description h1 {
@@ -324,6 +325,7 @@ footer {
         align-items: center;
         text-align: center;
         font-size: 12px;
+        text-wrap: balance;
     }
     .popup-disclaimer{
         width: 95%;
