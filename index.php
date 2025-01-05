@@ -24,6 +24,7 @@ curl_close($ch);
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?php echo $title; ?></title>
+        <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon.png">
         <link rel="stylesheet" href="./styles/styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +37,7 @@ curl_close($ch);
 
             <header>
                 <a href="/"><img src="./assets/LOGO.png" alt="Next MCU Releases logo"></a>
-                
+                <button onclick="openPopup()" class="open-disclaimer-popup" id="open-disclaimer-popup">DISCLAIMER</button>
             </header>
             <main>
                 <div class="overlay"></div>
@@ -67,6 +68,10 @@ curl_close($ch);
                         </div>
                         NEXT RELEASE
                     </a>
+                  
+                        
+
+                    
             </main>
             <footer>
                 <p>This website has been designed and developed by <span style="font-weight: 600;">Richard Suarez</span></p>
@@ -81,7 +86,30 @@ curl_close($ch);
                     </a>
                 </div>
             </footer>
-
+                <div class="disclaimer-overlay" id="disclaimer-overlay"></div>
+                    <div class="popup-disclaimer" id="popup-disclaimer">
+                        <img src="./assets/disclaimerIcon.png" alt="disclaimer icon" style="width:80px">
+                        <h3>DISCLAIMER</h3>
+                        <p>This website has been designed and developed by Richard Suarez using a <a href="https://whenisthenextmcufilm.com/api" target="_blank">third-party API</a>. This project is for educational purposes only and is not officially affiliated with Marvel Studios or its subsidiaries.</p>
+                        <button onclick="closePopup()" class="close-popup-btn">Got it!</button>
+                    </div>
         </div>
     </body>
+
+    <script>
+        const disclaimerOverlay= document.getElementById("disclaimer-overlay");
+        const disclaimerPopup= document.getElementById("popup-disclaimer");
+
+        function openPopup(){
+            disclaimerOverlay.style.display= "flex";
+            disclaimerPopup.style.display="flex";
+            document.body.classList.add("block-scroll");
+        }
+
+        function closePopup(){
+            disclaimerOverlay.style.display= "none";
+            disclaimerPopup.style.display="none";
+            document.body.classList.remove("block-scroll");
+        }
+    </script>
 </html>
