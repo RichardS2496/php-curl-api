@@ -1,6 +1,5 @@
 <?php
 
-$title= "The next MCU Film";
 const API_URL = "https://whenisthenextmcufilm.com/api";
 
 $ch = curl_init(API_URL);
@@ -39,10 +38,10 @@ curl_close($ch);
                 <div class="overlay"></div>
                 <section class="film-info">
                     <div class="movie-description">
-                        <span><?=$data["type"]?></span>
+                        <span class="type-tag"><?=$data["type"]?></span>
                         <h1><?= $data["title"]?></h1>
-                        <p><?= $data["overview"]?></p>
-                        <div>
+                        <p class="movie-overview"><?= $data["overview"]?></p>
+                        <div class="date_container">
                             <p>Release date</p>
                             <?php
                                 $dateByParts = explode('-', $data["release_date"]);
@@ -50,6 +49,7 @@ curl_close($ch);
                             ?>
                             <h2><?=$formattedDate?></h2>
                         </div>
+                        <button>Watch a trailer</button>
                     </div>
                     <div class="img-container">                    
                         <img src="<?= $data["poster_url"] ?>" alt="Poster de <?=$data["title"] ?>">
