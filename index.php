@@ -35,7 +35,8 @@ curl_close($ch);
         <div class="main-container">
 
             <header>
-                <img src="./assets/LOGO.png" alt="Next MCU Releases logo">
+                <a href="/"><img src="./assets/LOGO.png" alt="Next MCU Releases logo"></a>
+                
             </header>
             <main>
                 <div class="overlay"></div>

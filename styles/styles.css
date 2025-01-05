@@ -1,50 +1,57 @@
-:root{
+:root {
     --main-color: #e62429;
     --font-color: #FFFFFF;
     color-scheme: light dark;
     font-family: "Poppins", serif;
 }
 
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
--moz-box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body , html {
+body, html {
     width: 100%;
     height: 100%;
-    
 }
-.main-container{
+
+.main-container {
     display: grid;
-    grid-template-rows: auto 1fr auto;  
-    grid-template-columns: 1fr;         
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
     height: 100%;
 }
-header{
+
+header {
     background-color: #202020;
     padding: 1rem;
-    height: 90px;
+    height: fit-content;
     display: flex;
     align-items: center;
 }
 
-header img{
-    width: 160px;
+header a {
+    display: flex;
+    align-items: center;
+}
+
+header a img {
+    width: 152px;
     object-fit: contain;
 }
 
-main{
+main {
     position: relative;
     background-image: url(../assets/background.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    display: flex;
+    padding: 80px 20px;
 }
 
-main .overlay{
+main .overlay {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -54,37 +61,38 @@ main .overlay{
     pointer-events: none;
 }
 
-.film-info{
+.film-info {
     position: relative;
     width: 80%;
     z-index: 1;
     max-width: 1920px;
     margin: 0 auto;
-    padding: 80px 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 80px;
+    padding-bottom: 40px;
 }
-.movie-description{
+
+.movie-description {
     display: flex;
     flex-direction: column;
     order: 2;
     gap: 1.5rem;
     text-align: start;
-    h1{
-        font-size: 3.25rem;
-        text-shadow: #202020;
-    };
-    
 }
 
-.movie-overview{
+.movie-description h1 {
+    font-size: 3.25rem;
+    text-shadow: #202020;
+}
+
+.movie-overview {
     font-size: 1.35rem;
     text-shadow: #202020;
 }
 
-.type-tag{
+.type-tag {
     width: fit-content;
     background-color: var(--main-color);
     border-radius: 999px;
@@ -93,7 +101,7 @@ main .overlay{
     font-weight: 700;
 }
 
-.movie-description button{
+.movie-description button {
     font-size: 1.25rem;
     font-weight: 700;
     background-color: var(--main-color);
@@ -103,34 +111,37 @@ main .overlay{
     border-radius: 999px;
 }
 
-.movie-description button:hover{
+.movie-description button:hover {
     cursor: pointer;
 }
 
+.date_container p {
+    font-weight: 700;
+}
 
-.date_container h2{
-   
+.date_container h2 {
     font-size: 3rem;
 }
 
-.play-btn{
+.play-btn {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-
-.img-container{
+.img-container {
     width: 40%;
     order: 1;
 }
 
-.img-container img{
-    width: 100%;
+.img-container img {
+    width: 320px;
+    object-fit: cover;
     border-radius: 20px;
 }
 
-footer{
+footer {
+    background-color: #202020;
     padding: 1rem;
     height: fit-content;
     display: flex;
@@ -140,14 +151,19 @@ footer{
     gap: 1rem;
 }
 
-.social-container{
+.social-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 12px;
 }
 
-.next-btn{
+.social-container a{
+    display: flex;
+    align-items: center;
+}
+
+.next-btn {
     position: absolute;
     padding: 12px 28px 12px 14px;
     bottom: 12px;
@@ -165,16 +181,100 @@ footer{
     text-decoration: none;
 }
 
-.next-btn div{
-width: 64px;
-height: 64px;
-border-radius: 999px;
-overflow: hidden;
-
+.next-btn div {
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    overflow: hidden;
 }
 
-.next-btn div img{
+.next-btn div img {
     object-fit: contain;
     object-position: center;
     width: 100%;
+}
+
+@media (max-width: 1024px) {
+    header a img {
+        width: 80px;
+    }
+
+    main {
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+
+    .film-info {
+        width: 100%;
+        overflow: hidden;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .img-container {
+        width: 100%;
+    }
+
+    .img-container img {
+        width: 100%;
+        border-radius: 16px;
+    }
+
+    .movie-description {
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .movie-description h1 {
+        font-size: 2.25rem;
+        line-height: 3rem;
+    }
+
+    .movie-overview {
+        font-size: 1rem;
+    }
+
+    .type-tag {
+        font-size: 0.75rem;
+    }
+
+    .next-btn {
+        position: relative;
+        align-self: flex-end;
+        padding: 8px 20px 8px 12px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    header a img {
+        width: 120px;
+    }
+
+    main {
+        flex-direction: row;
+        padding: 40px 10px;
+    }
+
+    .film-info {
+        max-width: 1240px;
+        flex-direction: row;
+        align-items: start;
+        gap: 40px;
+    }
+
+    .img-container {
+        width: 30%;
+    }
+
+    footer {
+        font-size: 12px;
+    }
 }
