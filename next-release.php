@@ -41,13 +41,13 @@ curl_close($ch);
                 <div class="overlay"></div>
                 <section class="film-info">
                     <div class="movie-description">
-                        <span class="type-tag"><?=$data["type"]?></span>
-                        <h1><?= $data["title"]?></h1>
-                        <p class="movie-overview"><?= $data["overview"]?></p>
+                        <span class="type-tag"><?=$data["following_production"]["type"]?></span>
+                        <h1><?= $data["following_production"]["title"]?></h1>
+                        <p class="movie-overview"><?= $data["following_production"]["overview"]?></p>
                         <div class="date_container">
                             <p>Release date</p>
                             <?php
-                                $dateByParts = explode('-', $data["release_date"]);
+                                $dateByParts = explode('-', $data["following_production"]["release_date"]);
                                 $formattedDate = $dateByParts[2].'-'.$dateByParts[1].'-'.$dateByParts[0];
                             ?>
                             <h2><?=$formattedDate?></h2>
@@ -56,16 +56,11 @@ curl_close($ch);
                     </div>
                     <div class="img-container"> 
                             
-                        <img src="<?= $data["poster_url"] ?>" alt="Poster de <?=$data["title"] ?>">
+                        <img src="<?= $data["following_production"]["poster_url"] ?>" alt="Poster de <?=$data["following_production"]["title"] ?>">
                     </div>
                     
                 </section>
-                <a class="next-btn" href="next-release.php">
-                        <div>
-                            <img src="<?= $data["following_production"]["poster_url"]?>" alt="this is a poster image of the next mcu film">
-                        </div>
-                        NEXT RELEASE
-                    </a>
+                
             </main>
             <footer>
                 <p>This website has been designed and developed by <span style="font-weight: 600;">Richard Suarez</span></p>
