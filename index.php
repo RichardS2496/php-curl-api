@@ -23,7 +23,7 @@ curl_close($ch);
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><?php echo $data["title"]."|".$title; ?></title>
+        <title><?php echo $data["title"]." | ".$title; ?></title>
         <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon.png">
         <link rel="stylesheet" href="./styles/styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -14,6 +14,7 @@
 body, html {
     width: 100%;
     height: 100%;
+    color: var(--font-color);
 }
 
 body.block-scroll {
